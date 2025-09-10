@@ -9,18 +9,9 @@ int main() {
 	ios_base::sync_with_stdio(false);
 	cin.tie(nullptr);
 
-	int n; cin >> n;
-	bool check = 0;
+	int x; cin >> x;
 
-	for (int i = 1; i <= n; i++) {
-		if (i % 2 == 0) {
-			cout << i << endl;
-			check = 1;
-		}
-	}
-
-	if (!check) cout << -1 << endl;
-
+	for (int i = 1; i <= 12; i++) cout << x << " * " << i << " = " << x*i << endl;
 
 	return 0;
 }

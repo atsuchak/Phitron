@@ -10,17 +10,10 @@ int main() {
 	cin.tie(nullptr);
 
 	int n; cin >> n;
-	bool check = 0;
 
 	for (int i = 1; i <= n; i++) {
-		if (i % 2 == 0) {
-			cout << i << endl;
-			check = 1;
-		}
+		if (n % i == 0) cout << i << endl;
 	}
-
-	if (!check) cout << -1 << endl;
-
 
 	return 0;
 }

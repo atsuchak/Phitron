@@ -10,17 +10,11 @@ int main() {
 	cin.tie(nullptr);
 
 	int n; cin >> n;
-	bool check = 0;
 
-	for (int i = 1; i <= n; i++) {
-		if (i % 2 == 0) {
-			cout << i << endl;
-			check = 1;
-		}
-	}
+	vector<int> a(n);
+	for (int i = 0; i < n; i++) cin >> a[i];
 
-	if (!check) cout << -1 << endl;
-
+	cout << *max_element(a.begin(), a.end());
 
 	return 0;
 }

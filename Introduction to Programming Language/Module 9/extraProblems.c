@@ -104,19 +104,47 @@ int main() {
 		int n; scanf("%d", &n);
 
 		int arr[n];
-		for(int i = 1; i <= n;i++) 
+		for(int i = 0; i < n;i++) 
 			scanf("%d", &arr[i]);
 
-		int sum = 0, min = INT_MAX;
-		for(int i = 1; i < n; i++) {
-			for(int j = i+1; j <= n; j++) {
-				sum = arr[i] + arr[j] + j - i;
-				if(sum < min) min = sum;
+		int min = INT_MAX;
+		for(int i = 0; i < n; i++) {
+			for(int j = i+1; j < n; j++) {
+				// sum = arr[i] + arr[j] + j - i;
+				// if(sum < min) min = sum;
+				if(arr[i] + arr[j] + j - i < min)
+					min = arr[i] + arr[j] + j - i;
 			}
 		}
-
 		printf("%d", min);
 	}
-
 	return 0;
+}
+
+#include<stdio.h>
+#include<limits.h>
+int main()
+{
+    int t;
+    scanf("%d",&t);
+    while(t--)
+    {
+        int n;
+        scanf("%d",&n);
+        int a[n];
+        for(int i=0;i<n;i++)
+        {
+            scanf("%d",&a[i]);
+        }
+        int mn = INT_MAX;
+        for(int i=0;i<n;i++)
+        {
+            for(int j=i+1;j<n;j++)
+            {
+                if(a[i]+a[j]+j-i < mn)
+                    mn = a[i]+a[j]+j-i;
+            }
+        }
+        printf("%d\n",mn);
+    }
 }

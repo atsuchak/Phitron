@@ -3,32 +3,30 @@
 
 int main() {
 
-    // freopen("D:/Sublime file/input.txt", "r", stdin);
-    // freopen("D:/Sublime file/output.txt", "w", stdout);
-
     int n; 
     scanf("%d", &n);
 
     while(n--) {
-        char a[10001], b[10001];
-        scanf("%s %s", &a, &b);
+        char a[105], b[105];
+        scanf("%s %s", a, b);
 
-        char temp[10001] = {'\0'};
-        int len = strlen(a) + strlen(b);
+        char temp[210] = {'\0'};
+        int len1 = strlen(a);
+        int len2 = strlen(b);
         int k = 0;
 
-        for(int i = 0; i < len; i++) {
-            if(a[i] != '\0') {
+        for(int i = 0; i < len1 || i < len2; i++) {
+            if(i < len1) {
                 temp[k] = a[i];
                 k++;    
             }
-            if(b[i] != '\0') {
+            if(i < len2) {
                 temp[k] = b[i];
                 k++;
             }
-            if(k == len) break;
         }
 
+        temp[k] = '\0';
         printf("%s\n", temp);
     }
 

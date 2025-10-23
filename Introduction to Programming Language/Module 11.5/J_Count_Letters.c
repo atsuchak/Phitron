@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <string.h>
 
+char st[10000001];
 int main() {
 
-    char st[1000001];
     scanf("%s", &st);
 
     int freq[26] = {0};

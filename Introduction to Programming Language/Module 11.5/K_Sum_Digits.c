@@ -8,10 +8,12 @@ int main() {
     int n;
     scanf("%d", &n);
 
-    char a[n];
-    scanf("%s", a);
-    // for(int i = 0; i < n; i++)
-    //     scanf("%c", &a[i]);
+    char a[n+1];
+    // scanf("%s", a);
+    for(int i = 0; i < n;i++)
+        scanf("%c", &a[i]);
+
+    printf("%s\n", a);
 
     int sum = 0;
     for(int i = 0; i < n; i++)

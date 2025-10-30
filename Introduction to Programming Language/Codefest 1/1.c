@@ -14,6 +14,7 @@ int main() {
 
 	printf("%s", s1);
 	while(e >= s) {
+		if(s == strlen(s2)) break;
 		printf("%c", s2[s]);
 		s++;
 	}

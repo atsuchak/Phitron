@@ -119,29 +119,29 @@
 
 
 
-//5
-#include <stdio.h>
+// //5
+// #include <stdio.h>
 
-int main() {
+// int main() {
 
-    freopen("D:/Sublime file/input.txt", "r", stdin);
-    freopen("D:/Sublime file/output.txt", "w", stdout);
+//     freopen("D:/Sublime file/input.txt", "r", stdin);
+//     freopen("D:/Sublime file/output.txt", "w", stdout);
 
-	int n;
-	scanf("%d", &n);
+// 	int n;
+// 	scanf("%d", &n);
 
-	int charCount = 1;
+// 	int charCount = 1;
 
-	for(int i = 1; i <= n; i++) {
+// 	for(int i = 1; i <= n; i++) {
 
-		char ch = 'A';
-		for(int j = 1; j <= charCount; j++) {
-			printf("%c ", ch);
-			ch++;
-		}
-		printf("\n");
-		charCount++;
-	}
+// 		char ch = 'A';
+// 		for(int j = 1; j <= charCount; j++) {
+// 			printf("%c ", ch);
+// 			ch++;
+// 		}
+// 		printf("\n");
+// 		charCount++;
+// 	}
 
-    return 0;
-}
+//     return 0;
+// }

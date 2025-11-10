@@ -73,29 +73,29 @@
 // }
 
 
-//4
-#include <stdio.h>
+// //4
+// #include <stdio.h>
 
-void reverse_print(int arr[], int n) {
-	if(n == -1) return;
+// void reverse_print(int arr[], int n) {
+// 	if(n == -1) return;
 
-	if(n%2 == 0) printf("%d ", arr[n]);
-	reverse_print(arr, n-1);
-}
+// 	if(n%2 == 0) printf("%d ", arr[n]);
+// 	reverse_print(arr, n-1);
+// }
 
-int main() {
+// int main() {
 
-    freopen("D:/Sublime file/input.txt", "r", stdin);
-    freopen("D:/Sublime file/output.txt", "w", stdout);
+//     // freopen("D:/Sublime file/input.txt", "r", stdin);
+//     // freopen("D:/Sublime file/output.txt", "w", stdout);
 
-	int n;
-	scanf("%d", &n);
+// 	int n;
+// 	scanf("%d", &n);
 
-	int arr[n];
-	for(int i = 0; i < n; i++)
-		scanf("%d", &arr[i]);
+// 	int arr[n];
+// 	for(int i = 0; i < n; i++)
+// 		scanf("%d", &arr[i]);
 
-	reverse_print(arr, n-1);
+// 	reverse_print(arr, n-1);
 
-    return 0;
-}
+//     return 0;
+// }

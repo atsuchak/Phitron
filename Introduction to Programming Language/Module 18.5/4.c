@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdbool.h>
 
 int main() {
 
@@ -22,7 +23,6 @@ int main() {
 	for(int i = 0; i < n; i++) {
 		for(int j = 0; j < m; j++) {
 			if(arr[i][j] == x){
-				printf("will not take number\n");
 				chk = 0;
 				break;
 			}
@@ -31,6 +31,8 @@ int main() {
 
 	if(chk)
 		printf("will take number\n");
+	else 
+		printf("will not take number\n");
 
 	return 0;
 }

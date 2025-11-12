@@ -1,18 +1,9 @@
 #include <stdio.h>
 
-// void summation(int a[], int n, int total) {
-// 	if(n == 0) {
-// 		printf("%d", total);
-// 		return;
-// 	}
-
-// 	total += a[n-1];
-// 	summation(a, n-1, total);
-// }
-
-int summation(int a[], int n, int total) {
+void summation(long long int a[], int n, long long int total) {
 	if(n == 0) {
-		return total;
+		printf("%lld", total);
+		return;
 	}
 
 	total += a[n-1];
@@ -21,18 +12,17 @@ int summation(int a[], int n, int total) {
 
 int main() {
 
-    freopen("D:/Sublime file/input.txt", "r", stdin);
-    freopen("D:/Sublime file/output.txt", "w", stdout);
+    // freopen("D:/Sublime file/input.txt", "r", stdin);
+    // freopen("D:/Sublime file/output.txt", "w", stdout);
 
 	int n;
 	scanf("%d", &n);
 
-	int a[n];
+	long long int a[n];
 	for(int i = 0; i < n; i++)
-		scanf("%d", &a[i]);
+		scanf("%lld", &a[i]);
 
-	int total = 0;
-	int ans = summation(a, n, total);
-	printf("%d", ans);
+	long long int total = 0;
+	summation(a, n, total);
     return 0;
 }

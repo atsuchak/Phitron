@@ -21,7 +21,7 @@ int main() {
 		for(int j = 0; j < n; j++){
 			if(i == j) 
 				primary_sum += arr[i][j];
-			else if(i+j == n-1) 
+			if(i+j == n-1) 
 				secondary_sum += arr[i][j];
 		}
 	}

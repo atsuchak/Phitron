@@ -7,18 +7,9 @@ int main() {
     freopen("D:/File/output.txt", "w", stdout);
 #endif
 
-    //1
-    // string st = "Hello";
+    string st; cin >> st;
 
-    //2
-    // string st("Hello world", 4);
-
-    //3
-    // string st = "Hello world";
-    // string t(st, 4);
-
-    //4
-    string st(5, 'A');
+    sort(st.begin(), st.end());
 
     cout << st << endl;
 

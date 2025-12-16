@@ -46,7 +46,22 @@ int main() {
     for(int i : v) cout << i << " ";
     cout << endl;
 
+    v.push_back(7);
+    v.insert(v.begin(), 7);
+    v.push_back(7);
 
+    cout << "Before replace: ";
+    for(int i : v) cout << i << " ";
+    cout << endl;
+
+    replace(v.begin(), v.end(), 7, 0);  //replace value from index 0
+    cout << "After replace: ";
+    for(int i : v) cout << i << " ";
+    cout << endl;
+
+    auto it = find(v.begin(), v.end(), 100);
+    if(it == v.end()) cout << "Not found" << endl;
+    else cout << "Found" << endl;
 
 
     return 0;

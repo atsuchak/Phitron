@@ -19,14 +19,12 @@ int main() {
     freopen("D:/File/output.txt", "w", stdout);
 #endif
 
-    Node a(87), b(12), c(23);
+    Node* head = new Node(87);
+    Node* a = new Node(34);
 
-    a.next = &b;
-    b.next = &c;
-    
-    cout << "a.val: " << a.val << endl;
-    cout << "a.next val: " << a.next->val << endl;
-    cout << "a.next.next val: " << a.next->next->val << endl;
+    head->next = a;
 
+    cout << "Head value: " << head->val << endl;
+    cout << "Head next value: " << head->next->val << endl;
     return 0;
 }

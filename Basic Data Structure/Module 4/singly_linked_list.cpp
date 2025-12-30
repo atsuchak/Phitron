@@ -2,33 +2,30 @@
 using namespace std;
 
 class Node {
-   
-    public:
+    
+public: 
     int val;
     Node* next;
 };
 
 int main() {
 #ifndef ONLINE_JUDGE
-    // freopen("D:/File/input.txt", "r", stdin);
-    // freopen("D:/File/output.txt", "w", stdout);
+    freopen("D:/File/input.txt", "r", stdin);
+    freopen("D:/File/output.txt", "w", stdout);
 #endif
 
     Node a, b, c;
-
-    a.val = 5;
-    b.val = 15;
-    c.val = 22;
-
-    cout << "Print using val:" << endl;
-    cout << a.val << " " << b.val << " " << c.val << endl;
+    a.val = 4;
+    b.val = 8;
+    c.val = 3;
 
     a.next = &b;
-    b.next = &c; 
+    b.next = &c;
     c.next = NULL;
-
-    cout << "Print using node: " << endl;
-    cout << (*a.next).val << " " << (*b.next).val << " " << (*c.next).val << endl;
+    
+    cout << "a.val: " << a.val << endl;
+    cout << "a.next val: " << a.next->val << endl;
+    cout << "a.next.next val: " << a.next->next->val << endl;
 
     return 0;
 }

@@ -26,7 +26,10 @@ void insert_at_tail(Node* &head, Node* &tail, int val) {
 }
 
 void delete_at_head(Node* &head) {
+    Node* store = head;
+
     head = head->next;
+    delete store;
 }
 
 void print_ll(Node* &tmp) {

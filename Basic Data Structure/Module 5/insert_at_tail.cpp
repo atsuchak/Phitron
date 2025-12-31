@@ -13,7 +13,7 @@ class Node {
     }
 };
 
-void insert_at_tail(Node* &head, int val) {
+void insert_at_tail(Node* &head, int val) {  // TC -> O(n)
     Node* newNode = new Node(val);
     Node* temp = head;
 

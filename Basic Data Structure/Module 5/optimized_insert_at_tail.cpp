@@ -17,7 +17,10 @@ void opt_insert_at_tail(Node* &head, Node* &tail, int val) {  // TC -> O(1)
     Node* newNode = new Node(val);
     Node* temp = head;
 
-    if(head == NULL) head = newNode;
+    if(head == NULL) {
+        head = newNode;
+        tail = newNode;
+    }
     else {
         tail->next = newNode,
         tail = tail->next;

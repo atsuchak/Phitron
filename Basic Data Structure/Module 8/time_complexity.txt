@@ -1,0 +1,31 @@
+Singly Linked List: 
+    Insert_at_head -> O(1)
+    Insert_at_tail -> O(1)
+    Insert_at_any_pos -> O(n)
+
+    Delete_at_head -> O(1)
+    Delete_at_tail -> O(n)
+    Delete_at_any_pos -> O(n)
+
+-------------------------------------------
+
+Doubly Linked List: 
+    Insert_at_head -> O(1)
+    Insert_at_tail -> O(1)
+    Insert_at_any_pos -> O(n)
+
+    Delete_at_head -> O(1)
+    Delete_at_tail -> O(1)
+    Delete_at_any_pos -> O(n)
+
+
+-------------------------------------------
+
+Array: 
+    Insert_at_head -> O(n)  // need to shift every value of the array
+    Insert_at_tail -> O(1)
+    Insert_at_any_pos -> O(n)
+
+    Delete_at_head -> O(n)
+    Delete_at_tail -> O(1)
+    Delete_at_any_pos -> O(n)

@@ -43,11 +43,31 @@ Node* binary_input() {
     return root;
 }
 
-bool search(Node* root, int val) {
-    if(!root) return 0;
-    if(root->val == val) return 1;
+void level_order_print(Node* root) {
+    queue<Node*> q;
+    q.push(root);
 
-    return (root->val > val)? search(root->left, val) : search(root->right, val);
+    while(!q.empty()) {
+        Node* tmp = q.front();
+        q.pop();
+
+        cout << tmp->val << " ";
+
+        if(tmp->left) q.push(tmp->left);
+        if(tmp->right) q.push(tmp->right);
+    }
+}
+
+void insert(Node* &root, int val) {
+    if(root == NULL) root = new Node(val);
+
+    if(root->val > val) { 
+        if(root->left == NULL) root->left = new Node(val);
+        else insert(root->left, val);
+    } else {
+        if(root->right == NULL) root->right = new Node(val);
+        else insert(root->right, val);
+    }
 }
 
 int main() {
@@ -59,7 +79,9 @@ int main() {
     Node* root = binary_input();
 
     int val; cin >> val;
-    search(root, val)? cout << "Paisi" << endl : cout << "Pai nai" << endl;
+
+    insert(root, val);
+    level_order_print(root);
 
     return 0;
 }

@@ -11,7 +11,7 @@ int main() {
 
     int adjMat[n][n];
     memset(adjMat, 0, sizeof(adjMat));
-    for(int i = 0; i < n; i++) 
+    for(int i = 0; i < e; i++) 
         for(int j = 0; j < n; j++) 
             if(i == j) adjMat[i][j] = 1;
 

@@ -1,4 +1,4 @@
-//Problem link: 
+//Problem link: https://vjudge.net/contest/793768#problem/O
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -31,10 +31,17 @@ const int MOD = 1e9 + 7; const int INF = 1e18;
 
 void solve() {
     int n; cin >> n;
+    vi a(n); cin >> a;
 
-    cout << n << nl;
+    vi ans;
+    for(auto i : a) {
+        auto it = upper_bound(all(ans), i);
 
-    cout << "Hello World";
+        if(it == ans.end()) ans.push_back(i);
+        else *it = i;
+    }
+
+    cout << ans.size() << nl;
 }
 
 int32_t main() {

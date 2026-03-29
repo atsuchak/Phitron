@@ -1,4 +1,4 @@
-//Problem link: 
+//Problem link: https://vjudge.net/contest/793768#problem/R
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -31,10 +31,13 @@ const int MOD = 1e9 + 7; const int INF = 1e18;
 
 void solve() {
     int n; cin >> n;
+    vi a(n); cin >> a;
 
-    cout << n << nl;
+    vi tmp = a;
+    sort(all(tmp));
 
-    cout << "Hello World";
+    if(tmp == a) cout << a.size() << nl;
+    else cout << 1 << nl;
 }
 
 int32_t main() {
@@ -45,7 +48,7 @@ int32_t main() {
     #endif
 
     int t = 1;
-    // cin >> t;
+    cin >> t;
 
     for(int i = 1; i <= t; i++) {
         // cout << "Case " << i << ": ";

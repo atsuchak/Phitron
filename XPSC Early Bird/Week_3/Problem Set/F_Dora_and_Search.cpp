@@ -1,4 +1,4 @@
-//Problem link: 
+//Problem link: https://vjudge.net/contest/793768#problem/F
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -31,10 +31,21 @@ const int MOD = 1e9 + 7; const int INF = 1e18;
 
 void solve() {
     int n; cin >> n;
+    vi a(n); cin >> a;
 
-    cout << n << nl;
+    int l = 0, r = n-1;
+    int mn = 1, mx = n;
 
-    cout << "Hello World";
+    while(l <= r) {
+        if(a[l] == mn) l++, mn++;
+        else if(a[l] == mx) l++, mx--;
+        else if(a[r] == mn) r--, mn++;
+        else if(a[r] == mx) r--, mx--;
+        else break;
+    }
+
+    if(l <= r) cout << l+1 << " " << r+1 << nl;
+    else cout << -1 << nl;
 }
 
 int32_t main() {
@@ -45,7 +56,7 @@ int32_t main() {
     #endif
 
     int t = 1;
-    // cin >> t;
+    cin >> t;
 
     for(int i = 1; i <= t; i++) {
         // cout << "Case " << i << ": ";

@@ -1,4 +1,4 @@
-//Problem link: 
+//Problem link: https://vjudge.net/contest/793768#problem/D
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -31,10 +31,36 @@ const int MOD = 1e9 + 7; const int INF = 1e18;
 
 void solve() {
     int n; cin >> n;
+    vi a(n); cin >> a;
 
-    cout << n << nl;
+    map<int, int> mp;
+    for(int i = 0; i < n; i++)
+        mp[a[i]]++;
 
-    cout << "Hello World";
+    priority_queue<int> pq;
+    for(auto it : mp) pq.push(it.second);
+
+    while(!pq.empty()) {
+        if(pq.size() < 2) break;
+        int x = pq.top();
+        pq.pop();
+
+        int y = pq.top();
+        pq.pop();
+
+        x--, y--;
+
+        if(x > 0) pq.push(x);
+        if(y > 0) pq.push(y);
+    }
+
+    int ans = 0;
+    while(!pq.empty()) {
+        ans += pq.top();
+        pq.pop();
+    }
+
+    cout << ans << nl;
 }
 
 int32_t main() {
@@ -45,7 +71,7 @@ int32_t main() {
     #endif
 
     int t = 1;
-    // cin >> t;
+    cin >> t;
 
     for(int i = 1; i <= t; i++) {
         // cout << "Case " << i << ": ";

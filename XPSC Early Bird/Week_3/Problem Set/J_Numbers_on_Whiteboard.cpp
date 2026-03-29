@@ -1,4 +1,4 @@
-//Problem link: 
+//Problem link: https://vjudge.net/contest/793768#problem/J
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -13,6 +13,7 @@ typedef vector<pair<int, int>> vpii;
 #define nl '\n'
 #define yes cout << "YES" << nl
 #define no cout << "NO" << nl
+#define pb push_back
 #define ret(x) {cout << x << nl; return;}
 #define all(x) (x).begin(), (x).end()
 #define rall(x) (x).rbegin(), (x).rend()
@@ -32,9 +33,19 @@ const int MOD = 1e9 + 7; const int INF = 1e18;
 void solve() {
     int n; cin >> n;
 
-    cout << n << nl;
+    vi a;
+    for(int i = 1; i <= n; i++) a.push_back(i);
+    
+    int sum = 0;
+    vpii vec(n-1);
+    for(int i = n-1, j = 0; i >= 1; i--, j++) {
+        vec[j].first = a[i], vec[j].second = a[i-1];
+        sum = (a[i] + a[i-1] + 1)/2;
+        a[i-1] = sum;
+    }
 
-    cout << "Hello World";
+    cout << sum << nl;
+    for(auto it : vec) cout << it.first << " " << it.second << nl;
 }
 
 int32_t main() {
@@ -45,7 +56,7 @@ int32_t main() {
     #endif
 
     int t = 1;
-    // cin >> t;
+    cin >> t;
 
     for(int i = 1; i <= t; i++) {
         // cout << "Case " << i << ": ";

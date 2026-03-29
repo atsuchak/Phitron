@@ -1,4 +1,4 @@
-//Problem link: 
+//Problem link: https://vjudge.net/contest/793768#problem/C
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -30,11 +30,21 @@ const int MOD = 1e9 + 7; const int INF = 1e18;
 
 
 void solve() {
-    int n; cin >> n;
+    int n, m; cin >> n >> m;
+    vi a(n); cin >> a;
 
-    cout << n << nl;
+    map<int, set<int>> mp;
+    for(int i = 0; i < n; i++) 
+        mp[a[i]].insert(i);
 
-    cout << "Hello World";
+    while(m--) {
+        int x, y; cin >> x >> y;
+
+        if(mp.find(x) != mp.end() && mp.find(y) != mp.end()) {
+            if(*mp[x].begin() < *mp[y].rbegin()) cout << "YES" << nl;
+            else cout << "NO" << nl;
+        }else cout << "NO" << nl;
+    }
 }
 
 int32_t main() {
@@ -45,7 +55,7 @@ int32_t main() {
     #endif
 
     int t = 1;
-    // cin >> t;
+    cin >> t;
 
     for(int i = 1; i <= t; i++) {
         // cout << "Case " << i << ": ";

@@ -1,4 +1,4 @@
-//Problem link: 
+//Problem link: https://vjudge.net/contest/793768#problem/H
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -31,10 +31,38 @@ const int MOD = 1e9 + 7; const int INF = 1e18;
 
 void solve() {
     int n; cin >> n;
+    vi a(n); cin >> a;
 
-    cout << n << nl;
+    map<int, int> mp;
+    for (int i = 0; i < n; i++) mp[a[i]] = i;
 
-    cout << "Hello World";
+    int cnt = 0;
+    int i = 0;
+    while (i < n) {
+        cnt++;
+        int mn = mp[a[i]]; 
+        int j = i;
+        while (j < n) {
+            if (mp[a[j]] < mn) mn = mp[a[j]];
+            
+            if (j >= mn) {
+                i = n;
+                break;
+            }
+            
+            if (j + 1 < n && j < mn) {
+                j++;
+                if (j < mn) {
+                    i = j;
+                    break;
+                }
+            } else {
+                i = n;
+                break;
+            }
+        }
+    }
+    cout << cnt << nl;
 }
 
 int32_t main() {
@@ -45,7 +73,7 @@ int32_t main() {
     #endif
 
     int t = 1;
-    // cin >> t;
+    cin >> t;
 
     for(int i = 1; i <= t; i++) {
         // cout << "Case " << i << ": ";

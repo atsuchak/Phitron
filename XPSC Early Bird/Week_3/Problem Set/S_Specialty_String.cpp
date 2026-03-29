@@ -1,4 +1,4 @@
-//Problem link: 
+//Problem link: https://vjudge.net/contest/793768#problem/S
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -13,6 +13,7 @@ typedef vector<pair<int, int>> vpii;
 #define nl '\n'
 #define yes cout << "YES" << nl
 #define no cout << "NO" << nl
+#define pb push_back
 #define ret(x) {cout << x << nl; return;}
 #define all(x) (x).begin(), (x).end()
 #define rall(x) (x).rbegin(), (x).rend()
@@ -32,9 +33,15 @@ const int MOD = 1e9 + 7; const int INF = 1e18;
 void solve() {
     int n; cin >> n;
 
-    cout << n << nl;
+    stack<char> st;
+    for(int i = 0; i < n; i++) {
+        char ch; cin >> ch;
+        
+        if(!st.empty() && st.top() == ch) st.pop();
+        else st.push(ch);
+    }
 
-    cout << "Hello World";
+    st.empty()? yes : no;
 }
 
 int32_t main() {
@@ -45,7 +52,7 @@ int32_t main() {
     #endif
 
     int t = 1;
-    // cin >> t;
+    cin >> t;
 
     for(int i = 1; i <= t; i++) {
         // cout << "Case " << i << ": ";

@@ -32,13 +32,20 @@ const int MOD = 1e9 + 7; const int INF = 1e18;
 
 void solve() {
     int n, m; cin >> n >> m;
-    
     vi a(n); cin >> a;
-    vi cus(m); cin >> cus;
 
-    sort(all(a));
-    for(int i = 0; i < m; i++) {
-        if(a[i] < cus[i])
+    multiset<int> ms;
+    for (auto it : a) ms.insert(it);
+
+    vi b(m); cin >> b;
+    for (auto i : b) {
+        auto it = upper_bound(all(ms), i);
+
+        if (it == ms.begin())  cout << -1 << nl;
+        else {
+            cout << *--it << nl;
+            ms.erase(it);
+        }
     }
 }
 

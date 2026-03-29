@@ -1,4 +1,4 @@
-//Problem link: 
+//Problem link: https://vjudge.net/contest/793768#problem/G
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -31,10 +31,26 @@ const int MOD = 1e9 + 7; const int INF = 1e18;
 
 void solve() {
     int n; cin >> n;
+    vi a(n); cin >> a;
 
-    cout << n << nl;
+    int m; cin >> m; 
+    while(m--) {
+        map<char, int> mp;
+        string st; cin >> st;
+        
+        if(st.size() != n) {cout << "NO" << nl; continue;}
 
-    cout << "Hello World";
+        bool chk = 1;
+        for(int i = 0; i < n; i++) {
+            if(mp.count(st[i])) {
+                if(mp[st[i]] != a[i]) chk = false;
+            } else mp[st[i]] = a[i];
+            
+            if(!chk) break;
+        }
+
+        chk? cout << "YES" << nl : cout << "NO" << nl;
+    }
 }
 
 int32_t main() {
@@ -45,7 +61,7 @@ int32_t main() {
     #endif
 
     int t = 1;
-    // cin >> t;
+    cin >> t;
 
     for(int i = 1; i <= t; i++) {
         // cout << "Case " << i << ": ";

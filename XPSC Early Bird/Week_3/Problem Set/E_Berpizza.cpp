@@ -1,4 +1,4 @@
-//Problem link: 
+//Problem link: https://vjudge.net/contest/793768#problem/E
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -30,11 +30,35 @@ const int MOD = 1e9 + 7; const int INF = 1e18;
 
 
 void solve() {
-    int n; cin >> n;
+    int n, customer = 1; cin >> n;
 
-    cout << n << nl;
+    set<pair<int, int>> st;
+    multiset<pair<int, int>> mst;
+    vi ans;
+    for(int i = 0; i < n; i++) {
+        int type; cin >> type;
 
-    cout << "Hello World";
+        if(type == 1) {
+            int val; cin >> val;
+            st.insert({customer, val});
+            mst.insert({val, -customer});
+            customer++;
+        }else if(type == 2) {
+            int pos = st.begin()->first, val = st.begin()->second;
+            ans.push_back(pos);
+
+            st.erase(st.begin());
+            mst.erase({val, -pos});
+        }else {
+            int pos = -mst.rbegin()->second, val = mst.rbegin()->first;
+            ans.push_back(pos);
+
+            mst.erase(--mst.end());
+            st.erase({pos, val});
+        }
+    }
+
+    cout << ans;
 }
 
 int32_t main() {

@@ -1,4 +1,4 @@
-//Problem link: 
+//Problem link: https://vjudge.net/contest/806579#problem/E
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -30,23 +30,20 @@ const int MOD = 1e9 + 7; const int INF = 1e18;
 
 
 void solve() {
-    cout << "Hello World" << nl;
+    int a, b; cin >> a >> b;
 
-    int n; cin >> n;
-    vi a(n); cin >> a;
-
-    for (auto it : a) cout << "Hello " << it << nl;
+    cout << b/(a-1) << nl;
 }
 
 int32_t main() {
-    // ios_base::sync_with_stdio(0); cin.tie(0);
+    ios_base::sync_with_stdio(0); cin.tie(0);
 
     #ifndef ONLINE_JUDGE
-        // freopen("input.txt", "r", stdin); freopen("output.txt", "w", stdout);
+        freopen("input.txt", "r", stdin); freopen("output.txt", "w", stdout);
     #endif
 
     int t = 1;
-    // cin >> t;
+    cin >> t;
 
     for(int i = 1; i <= t; i++) {
         // cout << "Case " << i << ": ";

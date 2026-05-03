@@ -2,22 +2,24 @@
 using namespace std;
 
 int main() {
+    ios_base::sync_with_stdio(0); cin.tie(0);
+
 #ifndef ONLINE_JUDGE
-    freopen("D:/File/input.txt", "r", stdin);
-    freopen("D:/File/output.txt", "w", stdout);
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
 #endif
 
     int n, e; cin >> n >> e;
 
-    vector<pair<int,int>> edgeList;
+    vector<pair<int, int>> adj_edge;
+
     for(int i = 0; i < e; i++) {
         int a, b; cin >> a >> b;
 
-        edgeList.push_back(make_pair(a, b));
-        edgeList.push_back(make_pair(b, a));
+        adj_edge.push_back({a, b});
     }
 
-    for(auto it : edgeList) cout << it.first << " -> " << it.second << endl;
+    for(auto it : adj_edge) cout << it.first << " " << it.second << endl;
 
     return 0;
 }

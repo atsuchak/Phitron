@@ -2,28 +2,31 @@
 using namespace std;
 
 int main() {
+    ios_base::sync_with_stdio(0); cin.tie(0);
+
 #ifndef ONLINE_JUDGE
-    freopen("D:/File/input.txt", "r", stdin);
-    freopen("D:/File/output.txt", "w", stdout);
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
 #endif
 
     int n, e; cin >> n >> e;
 
-    int adjMat[n][n];
-    memset(adjMat, 0, sizeof(adjMat));
-    for(int i = 0; i < n; i++) 
+    int mat[n][n];
+    memset(mat, 0, sizeof(mat));
+
+    for(int i = 0; i < n; i++)
         for(int j = 0; j < n; j++) 
-            if(i == j) adjMat[i][j] = 1;
+            if(i == j) mat[i][j] = 1;
 
     for(int i = 0; i < e; i++) {
         int a, b; cin >> a >> b;
 
-        adjMat[a][b] = 1;
-        adjMat[b][a] = 1;
+        mat[a][b] = 1;
+        mat[b][a] = 1;
     }
 
     for(int i = 0; i < n; i++) {
-        for(int j = 0; j < n; j++) cout << adjMat[i][j] << " ";
+        for(int j = 0; j < n; j++) cout << mat[i][j] << " ";
         cout << endl;
     }
 

@@ -1,33 +1,38 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-vector<vector<int>> adjList(1005);
+vector<int> adj_list[1005];  //global diclaration
 bool vis[1005];
 
-void bfs_traversal(int src) {  // TC -> O(V + E)
+void bfs(int src) {
     queue<int> q;
     q.push(src);
     vis[src] = 1;
 
     while(!q.empty()) {
-        int tmp = q.front();
+        //queue theke node ber kore ana
+        int par = q.front();
         q.pop();
 
-        cout << tmp << " ";
+        //node niye kaj kora
+        cout << par << " ";
 
-        for(auto it : adjList[tmp]) {
-            if(!vis[it]) {
-                q.push(it);
-                vis[it] = 1;
+        //children gula queue te push kora
+        for(auto child : adj_list[par]) {
+            if(!vis[child]) {
+                q.push(child);
+                vis[child] = 1;
             }
         }
-    }
+    }    
 }
 
 int main() {
+    ios_base::sync_with_stdio(0); cin.tie(0);
+
 #ifndef ONLINE_JUDGE
-    freopen("D:/File/input.txt", "r", stdin);
-    freopen("D:/File/output.txt", "w", stdout);
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
 #endif
 
     int n, e; cin >> n >> e;
@@ -35,11 +40,18 @@ int main() {
     for(int i = 0; i < e; i++) {
         int a, b; cin >> a >> b;
 
-        adjList[a].push_back(b);
-        adjList[b].push_back(a);
+        adj_list[i].push_back(a);
+        adj_list[i].push_back(b);
     }
 
-    bfs_traversal(0);
+    memset(vis, 0, sizeof(vis));
+    bfs(0);
+
+    // for(int i = 0; i < e; i++) {
+    //     cout << i << " => ";
+    //     for(auto it : adj_list[i]) cout << it << " ";
+    //     cout << endl;
+    // }
 
     return 0;
 }

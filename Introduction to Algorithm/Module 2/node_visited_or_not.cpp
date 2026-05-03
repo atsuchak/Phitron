@@ -1,20 +1,19 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-vector<vector<int>> adjList(1005);
+vector<int> adjList[1005];
 bool vis[1005];
 
-void bfs(int src) {
+void bfs(int src, int dist) {
     queue<int> q;
     q.push(src);
-
     vis[src] = 1;
 
     while(!q.empty()) {
         int tmp = q.front();
         q.pop();
 
-        cout << tmp << " ";
+        // cout << tmp << " ";
 
         for(auto it : adjList[tmp]) {
             if(!vis[it]) {
@@ -23,12 +22,15 @@ void bfs(int src) {
             }
         }
     }
+
+    if(!vis[dist]) cout << "Not connected" << endl;
+    else cout << "Conneted" << endl;
 }
 
 int main() {
 #ifndef ONLINE_JUDGE
-    freopen("D:/File/input.txt", "r", stdin);
-    freopen("D:/File/output.txt", "w", stdout);
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
 #endif
 
     int n, e; cin >> n >> e;
@@ -42,7 +44,7 @@ int main() {
     memset(vis, 0, sizeof(vis));
 
     int srcNode, distNode; cin >> srcNode >> distNode;
-    bfs(srcNode);
+    bfs(srcNode, distNode);
 
     cout << endl;
     vis[distNode]? cout << srcNode << " -> " << distNode << ": Possible" << endl : 

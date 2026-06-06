@@ -1,0 +1,28 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int dp[1005];
+
+int fibo(int n) {
+    if(n < 2) return n;
+    if(dp[n] != -1) return dp[n];
+
+    dp[n] = fibo(n-1) + fibo(n-2);
+    return dp[n];
+}
+
+int main() {
+    ios_base::sync_with_stdio(0); cin.tie(0);
+
+#ifndef ONLINE_JUDGE
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+#endif
+
+    memset(dp, -1, sizeof(dp));
+    int n; cin >> n;
+
+    cout << fibo(n);
+
+    return 0;
+}

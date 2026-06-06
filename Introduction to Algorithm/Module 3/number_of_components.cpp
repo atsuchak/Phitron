@@ -5,17 +5,17 @@ vector<vector<int>> adjList(1005);
 bool vis[1005];
 
 void dfs(int src) {
-    // cout << src << " ";
-
+    //base case
+    cout << src << " ";
     vis[src] = 1;
-    for(auto it : adjList[src]) 
-        if(!vis[it]) dfs(it);
+    for(auto child : adjList[src]) 
+        if(!vis[child]) dfs(child);
 }
 
 int main() {
 #ifndef ONLINE_JUDGE
-    freopen("D:/File/input.txt", "r", stdin);
-    freopen("D:/File/output.txt", "w", stdout);
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
 #endif
 
     int n, e; cin >> n >> e;
@@ -26,16 +26,18 @@ int main() {
         adjList[a].push_back(b);
         adjList[b].push_back(a);
     }
-    memset(vis, 0, sizeof(vis));
 
+    memset(vis, 0, sizeof(vis));
     int cnt = 0;
-    for(int i = 0; i < n; i++) { 
+    for(int i = 0; i < n; i++) {
         if(!vis[i]) {
             dfs(i);
+            cout << endl;
             cnt++;
         }
     }
-    cout << cnt << endl;
+
+    cout << "Total number of comp: " << cnt << endl;
 
     return 0;
 }

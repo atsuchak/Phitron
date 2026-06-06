@@ -8,14 +8,14 @@ void dfs(int src) {
     //base case
     cout << src << " ";
     vis[src] = 1;
-    for(auto it : adjList[src]) 
-        if(!vis[it]) dfs(it);
+    for(auto child : adjList[src]) 
+        if(!vis[child]) dfs(child);
 }
 
 int main() {
 #ifndef ONLINE_JUDGE
-    freopen("D:/File/input.txt", "r", stdin);
-    freopen("D:/File/output.txt", "w", stdout);
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
 #endif
 
     int n, e; cin >> n >> e;
@@ -26,8 +26,8 @@ int main() {
         adjList[a].push_back(b);
         adjList[b].push_back(a);
     }
-    memset(vis, 0, sizeof(vis));
 
+    memset(vis, 0, sizeof(vis));
     dfs(0);
 
     return 0;

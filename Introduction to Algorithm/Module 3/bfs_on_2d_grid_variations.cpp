@@ -34,7 +34,7 @@ void bfs(int srcI, int srcJ) {
             int ci = parI + d[i].first;
             int cj = parJ + d[i].second;
 
-            if(valid(ci, cj) && !vis[ci][cj] && grid[ci][cj] == '.') {
+            if(valid(ci, cj) && !vis[ci][cj] && grid[ci][cj] == '.') {  // only if there is '.' then the if part execute
                 q.push({ci, cj});
                 vis[ci][cj] = 1;
                 dis[ci][cj] = dis[parI][parJ] + 1;
